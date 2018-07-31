@@ -1,3 +1,9 @@
 module = wsgi:application
 wsgi-file = wsgi.py
 home = {{ app_uwsgi_plugin_python3_venv_path }}
+virtualenv = {{ app_uwsgi_plugin_python3_venv_path }}
+mount = /={{ app_uwsgi_mount_point }}
+manage-script-name = true
+{% if app_uwsgi_pyargv %}
+pyargv = "{{ app_uwsgi_pyargv }}"
+{% endif %}
